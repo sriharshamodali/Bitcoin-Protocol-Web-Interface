@@ -1,0 +1,38 @@
+<div class="phx-hero" ng-if="!loader">
+<img src="<%= Routes.static_path(@conn, "/images/bitcoin.gif") %>" alt="Phoenix Framework Logo">
+  <p>Please click on start to initiate the bitcoin simulator</p>
+  <button class="button" ng-show="submitbutton" ng-disabled="showbutton" ng-click="submit()"><span>Start</span></button>
+  <button class="button" ng-show="!submitbutton" ng-disabled="showbutton" style="width: 200px;" ng-click="submit()"><span>Start Again</span></button>
+</div>
+
+<div id="loaderDiv" style="text-align:center">
+  <img src="<%= Routes.static_path(@conn, "/images/loader.gif") %>" alt="Phoenix Framework Logo">
+</div>
+
+<div ng-if="showgraph">
+<div class="row_new">
+  <div class="column_wallets">
+    <canvas id="walletschart"  style="width: 400px; height: 400px;"></canvas>
+  </div>
+</div>
+<br/>
+<div class="row_new">
+<label ng-show="showgraph">Details of the wallets involved in bitcoin transactions</label>
+  <div class="column_new">
+    <canvas id="senderDetails_before" style="width: 400px; height: 400px;"></canvas>
+  </div>
+  <div class="column_new">
+    <canvas id="receiverDetails_before"  style="width: 400px; height: 400px;"></canvas>
+  </div>
+  <div class="column_new">
+    <canvas id="senderDetails_after"  style="width: 400px; height: 400px;"></canvas>
+  </div>
+  <div class="column_new">
+    <canvas id="receiverDetails_after"  style="width: 400px; height: 400px;"></canvas>
+  </div>
+  <div class="column_new">
+    <canvas id="bitcoinsTransfered"  style="width: 400px; height: 400px;"></canvas>
+  </div>
+</div>
+</div>
+

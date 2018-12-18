@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <script src = "https://code.angularjs.org/1.0.1/angular-1.0.1.min.js"> </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+  
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Bitcoin Simulator</title>
+    <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
+  </head>
+  <body ng-app="bitcoin" ng-controller="HomeController">
+    <header>
+      <div class="headerImage">
+          <img src="<%= Routes.static_path(@conn, "/images/header.png") %>" alt="Phoenix Framework Logo"/>
+      </div>
+    </header>
+    <main>
+      <%= render @view_module, @view_template, assigns %>
+    </main>
+    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/homeController.js") %>"></script>
+  </body>
+</html>
